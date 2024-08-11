@@ -11,48 +11,47 @@
     
     <form id="character-form">
         <label for="race">Choose a Race:</label>
-        <select id="race" name="race">
-            <option value="dragonborn">Dragonborn</option>
-            <option value="dwarf">Dwarf</option>
-            <option value="elf">Elf</option>
-            <option value="gnome">Gnome</option>
-            <option value="half-elf">Half-Elf</option>
-            <option value="halfling">Halfling</option>
-            <option value="half-orc">Half-Orc</option>
-            <option value="human">Human</option>
-            <option value="tiefling">Tiefling</option>
-        </select>
+        <label for="raceSelect">Choose a race:</label>
+    <select id="raceSelect">
+        <option value="Dragonborn">Dragonborn</option>
+        <option value="Dwarf">Dwarf</option>
+        <option value="Elf">Elf</option>
+        <option value="Gnome">Gnome</option>
+        <option value="Half-Elf">Half-Elf</option>
+        <option value="Halfling">Halfling</option>
+        <option value="Half-Orc">Half-Orc</option>
+        <option value="Human">Human</option>
+        <option value="Tiefling">Tiefling</option>
+    </select>
 
-        <label for="class">Choose a Class:</label>
-        <select id="class" name="class">
-            <option value="artificer">Artificer</option>
-            <option value="barbarian">Barbarian</option>
-            <option value="bard">Bard</option>
-            <option value="cleric">Cleric</option>
-            <option value="druid">Druid</option>
-            <option value="fighter">Fighter</option>
-            <option value="monk">Monk</option>
-            <option value="paladin">Paladin</option>
-            <option value="ranger">Ranger</option>
-            <option value="rogue">Rogue</option>
-            <option value="sorcerer">Sorcerer</option>
-            <option value="warlock">Warlock</option>
-            <option value="wizard">Wizard</option>
-        </select>
-
+    <label for="classSelect">Choose a class:</label>
+    <select id="classSelect">
+        <option value="Artificer">Artificer</option>
+        <option value="Barbarian">Barbarian</option>
+        <option value="Bard">Bard</option>
+        <option value="Cleric">Cleric</option>
+        <option value="Druid">Druid</option>
+        <option value="Fighter">Fighter</option>
+        <option value="Monk">Monk</option>
+        <option value="Paladin">Paladin</option>
+        <option value="Ranger">Ranger</option>
+        <option value="Rogue">Rogue</option>
+        <option value="Sorcerer">Sorcerer</option>
+        <option value="Warlock">Warlock</option>
+        <option value="Wizard">Wizard</option>
+    </select>
         <button type="button" id="generate-btn">Generate Abilities & Features</button>
     </form>
 
     <div id="abilities-features">
         <h2>Abilities & Features</h2>
-        <textarea id="output" rows="10" cols="50" readonly></textarea>
+        <textarea id="output" rows="20" cols="80" readonly></textarea>
     </div>
 
     <button type="button" id="roll-stats-btn">Roll for Stats</button>
     <div id="ability-scores">
         <h2>Ability Scores</h2>
         <ul id="stats-list">
-            <!-- Filled by JavaScript -->
         </ul>
     </div>
 
@@ -64,7 +63,6 @@
         <input type="number" id="proficiency-bonus" value="2">
 
         <ul id="skills-list">
-            <!-- Filled by JavaScript -->
         </ul>
     </div>
 
