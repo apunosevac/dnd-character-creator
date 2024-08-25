@@ -296,6 +296,10 @@ function generateAbilities() {
     document.getElementById('output').value = output;
 }
 
+function rolld6(){
+    return Math.floor(Math.random() * 6) + 1;
+}
+
 function rollStats() {
     const stats = {
         Strength: 0,
@@ -310,14 +314,22 @@ function rollStats() {
     statsList.innerHTML = '';
 
     for (let stat in stats) {
-        const roll = Math.floor(Math.random() * 6) + 1 + Math.floor(Math.random() * 6) + 1 + Math.floor(Math.random() * 6) + 1;
-        console.log(`Roll: ${roll}`);
-        const modifier = Math.floor((roll - 10) / 2);
+        const rollResults = [rolld6(), rolld6(), rolld6(), rolld6()]
+        console.log(rollResults)
+        rollResults.sort()
+        rollResults.shift()
+        console.log(rollResults)
+        let sum = 0;
+        for (let i = 0; i < rollResults.length; i++){
+            sum += rollResults[i]
+        }
+        console.log(`Roll: ${sum}`);
+        const modifier = Math.floor((sum - 10) / 2);
         console.log(`Modifier: ${modifier}`);
         stats[stat] = modifier;
 
         const listItem = document.createElement('li');
-        listItem.textContent = `${stat}: ${roll} (Modifier: ${modifier >= 0 ? '+' : ''}${modifier})`;
+        listItem.textContent = `${stat}: ${sum} (Modifier: ${modifier >= 0 ? '+' : ''}${modifier})`;
         listItem.setAttribute('data-modifier', modifier);
 
         statsList.appendChild(listItem);
